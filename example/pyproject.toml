@@ -1,0 +1,25 @@
+[project]
+name = "vidu-examples"
+version = "0.0.1"
+description = "Vidu Image to Video example (Python)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "requests>=2.31.0",
+  "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+img2video = "vidu_examples.img2video:main"
+get_generation = "vidu_examples.get_generation:main"
+
+[tool.uv]
+# UV will create a local virtualenv on `uv sync`
+preview = true
+
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vidu_examples"]
